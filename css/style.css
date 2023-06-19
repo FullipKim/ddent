@@ -1,10 +1,3 @@
-/*
-  Theme Name: TheEvent
-  Theme URL: https://bootstrapmade.com/theevent-conference-event-bootstrap-template/
-  Author: BootstrapMade.com
-  License: https://bootstrapmade.com/license/
-*/
-
 /*--------------------------------------------------------------
 # General
 --------------------------------------------------------------*/
@@ -17,7 +10,7 @@ body {
 }
 
 a {
-  color: #f82249;
+  color: #00B6F1;
   transition: 0.5s;
 }
 
@@ -73,7 +66,7 @@ h6 {
 .back-to-top {
   position: fixed;
   display: none;
-  background: #f82249;
+  background: #00B6F1;
   color: #fff;
   width: 40px;
   height: 40px;
