@@ -12,7 +12,6 @@ jQuery(document).ready(function( $ ) {
     $('html, body').animate({scrollTop : 0},1500, 'easeInOutExpo');
     return false;
   });
-
   // Header fixed on scroll
   $(window).scroll(function() {
     if ($(this).scrollTop() > 100) {

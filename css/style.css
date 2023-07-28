@@ -100,6 +100,7 @@ h6 {
   padding-bottom: 20px;
 }
 
+/*
 .section-header::before {
   content: '';
   position: absolute;
@@ -110,12 +111,14 @@ h6 {
   bottom: 0;
   left: calc(50% - 25px);
 }
+*/
 
 .section-header h2 {
+  font-family: "Raleway";
   font-size: 36px;
   text-transform: uppercase;
   text-align: center;
-  font-weight: 700;
+  font-weight: 300;
   margin-bottom: 10px;
 }
 
@@ -457,16 +460,72 @@ body.mobile-nav-active #mobile-nav-toggle {
 /*--------------------------------------------------------------
 # Intro Section
 --------------------------------------------------------------*/
+#about-bg {
+	width: 100%;
+    height: 100vh;
+	background-color: rgba(0,182,241);
+	background: radial-gradient(circle, rgba(0,182,241,1) 0%, rgba(0,80,168,1) 100%);
+}
+.text-div2 {
+      text-align: left;
+	  position: absolute;
+	  top: 20vh; left: 12vw;
+      color: #000;
+    }
+    .text-div2 h1 {
+	  font-family: 'Raleway';
+	  font-weight: 600;
+	  color: #fff;
+      font-size: 72px;
+      text-transform: uppercase;
+    }
+	.text-div2 h1 span {
+	  font-family: 'Raleway';
+	  font-weight: 800;
+	  color: yellow;
+      font-size: 72px;
+      text-transform: uppercase;
+    }
+.about-img {
+      width: 75vw;
+      height: 68%;
+      background-repeat: no-repeat;
+      background-size: cover;
+      position: absolute;
+      top: 58vh; left:12vw;
+	  border-radius: 80px;
+      opacity: 0;
+      pointer-events: none; /* 이미지 위에 있는 링크 클릭 방지 */
+      transition: opacity 0.5s ease-in-out;
+    }
+    .about-img.active {
+      opacity: 1;
+    }
 
 #intro {
   width: 100%;
   height: 100vh;
-  background: url(../img/intro-bg.jpg) top center;
-  background-size: cover;
+  background: url(./img/mainvisual01.JPG) no-repeat center center fixed;
+  background-size:cover;
   overflow: hidden;
   position: relative;
+  transition: background-image 0.5s ease-in-out; /* 트랜지션 속성 추가 */ 
 }
-
+.slide-img {
+      width: 100%;
+      height: 100%;
+      background-repeat: no-repeat;
+      background-size: cover;
+      position: absolute;
+      top: 0;
+      left: 0;
+      opacity: 0;
+      pointer-events: none; /* 이미지 위에 있는 링크 클릭 방지 */
+      transition: opacity 0.5s ease-in-out;
+    }
+    .slide-img.active {
+      opacity: 1;
+    }
 #intro:before {
   content: "";
   background: rgba(6, 12, 34, 0.8);
@@ -500,25 +559,51 @@ body.mobile-nav-active #mobile-nav-toggle {
   padding: 0 15px;
 }
 
-#intro h1 {
-  color: #fff;
-  font-family: 'Pretendard';
-  font-size: 56px;
-  font-weight: 600;
-  text-transform: uppercase;
-}
 
-#intro h1 span {
-  color: #00B6F1;
-}
+.text-div {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+      color: #fff;
+    }
+    .text-div h1 {
+	  color: #fff;
+      font-size: 56px;
+      font-weight: 600;
+      text-transform: uppercase;
+    }
+	.text-div h1 span {
+	  color: #00B6F1;
+      font-size: 56px;
+      font-weight: 800;
+      text-transform: uppercase;
+    }
+    .text-div p {
+      font-size: 20px;
+      font-weight: 700;
+    }
+    .text-div a {
+      font-size: 14px;
+      font-weight: 500;
+      letter-spacing: 1px;
+      display: inline-block;
+      padding: 12px 32px;
+      border-radius: 50px;
+      transition: 0.5s;
+      line-height: 1;
+      margin: 10px;
+      color: #fff;
+      border: 2px solid #00B6F1;
+      text-decoration: none;
+    }
+    .text-div a:hover {
+      background: #00B6F1;
+      color: #fff;
+    }
 
-#intro p {
-  color: #ebebeb;
-  font-weight: 700;
-  font-size: 20px;
-}
-
-#intro .play-btn {
+.text-div .play-btn {
   width: 94px;
   height: 94px;
   background: radial-gradient(#00B6F1 50%, rgba(101, 111, 150, 0.15) 52%);
@@ -528,7 +613,7 @@ body.mobile-nav-active #mobile-nav-toggle {
   overflow: hidden;
 }
 
-#intro .play-btn::after {
+.text-div .play-btn::after {
   content: '';
   position: absolute;
   left: 50%;
@@ -544,7 +629,7 @@ body.mobile-nav-active #mobile-nav-toggle {
   transition: all 400ms cubic-bezier(0.55, 0.055, 0.675, 0.19);
 }
 
-#intro .play-btn:before {
+.text-div .play-btn:before {
   content: '';
   position: absolute;
   width: 120px;
@@ -567,13 +652,13 @@ body.mobile-nav-active #mobile-nav-toggle {
   background: rgba(198, 16, 0, 0);
 }
 
-#intro .play-btn:hover::after {
+.text-div .play-btn:hover::after {
   border-left: 15px solid #00B6F1;
   -webkit-transform: scale(20);
   transform: scale(20);
 }
 
-#intro .play-btn:hover::before {
+.text-div .play-btn:hover::before {
   content: '';
   position: absolute;
   left: 50%;
@@ -592,7 +677,7 @@ body.mobile-nav-active #mobile-nav-toggle {
   border-radius: 0;
 }
 
-#intro .about-btn {
+.text-div .about-btn {
   font-family: 'Pretendard';
   font-weight: 500;
   font-size: 14px;
@@ -609,9 +694,23 @@ body.mobile-nav-active #mobile-nav-toggle {
   border: 2px solid #00B6F1;
 }
 
-#intro .about-btn:hover {
+.text-div .about-btn:hover {
   background: #00B6F1;
   color: #fff;
+}
+
+@-webkit-keyframes pulsate-btn {
+  0% {
+    -webkit-transform: scale(0.6, 0.6);
+    transform: scale(0.6, 0.6);
+    opacity: 1;
+  }
+
+  100% {
+    -webkit-transform: scale(1, 1);
+    transform: scale(1, 1);
+    opacity: 0;
+  }
 }
 
 @-webkit-keyframes pulsate-btn {
@@ -722,7 +821,6 @@ body.mobile-nav-active #mobile-nav-toggle {
   color: #fff;
   font-size: 14px;
   margin-bottom: 8px;
-  font-style: italic;
 }
 
 #speakers .speaker .details .social {
@@ -821,7 +919,6 @@ body.mobile-nav-active #mobile-nav-toggle {
 #schedule .sub-heading {
   text-align: center;
   font-size: 18px;
-  font-style: italic;
   margin: 0 auto 30px auto;
 }
 
@@ -869,14 +966,12 @@ body.mobile-nav-active #mobile-nav-toggle {
 }
 
 #schedule .schedule-item h4 span {
-  font-style: italic;
   color: #19328e;
   font-weight: normal;
   font-size: 16px;
 }
 
 #schedule .schedule-item p {
-  font-style: italic;
   color: #152b79;
   margin-bottom: 0;
 }
@@ -953,12 +1048,14 @@ body.mobile-nav-active #mobile-nav-toggle {
 
 #hotels {
   padding: 60px 0;
+  text-align: center;
 }
 
 #hotels .hotel {
   border: 1px solid #e0e5fa;
   background: #fff;
   margin-bottom: 30px;
+  text-align: center;
 }
 
 #hotels .hotel:hover .hotel-img img {
@@ -1003,7 +1100,6 @@ body.mobile-nav-active #mobile-nav-toggle {
   padding: 0 20px;
   margin-bottom: 20px;
   color: #060c22;
-  font-style: italic;
   font-size: 15px;
 }
 
